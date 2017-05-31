@@ -1,0 +1,12 @@
+{
+    "name": "rongself/laravel-luosimao-sms",
+    "description": "luosimao Api for laravel 5.4.*",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rongself",
+            "email": "rongself@qq.com"
+        }
+    ],
+    "require": {}
+}
