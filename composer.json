@@ -8,5 +8,7 @@
             "email": "rongself@qq.com"
         }
     ],
-    "require": {}
+    "require": {
+        "illuminate/support": "^5.4"
+    }
 }
