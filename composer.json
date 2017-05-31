@@ -10,5 +10,13 @@
     ],
     "require": {
         "illuminate/support": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rongself\\Luosomao\\":"src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     }
 }
