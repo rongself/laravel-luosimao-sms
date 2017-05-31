@@ -14,9 +14,6 @@
     "autoload": {
         "psr-4": {
             "Rongself\\Luosomao\\":"src/"
-        },
-        "files": [
-            "src/helpers.php"
-        ]
+        }
     }
 }
