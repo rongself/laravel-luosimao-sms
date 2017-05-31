@@ -6,7 +6,7 @@
  * Time: 下午6:17
  */
 
-namespace Channels;
+namespace Rongself\Luosimao\Channels;
 
 use Exceptions\SmsNotificationException;
 use Illuminate\Support\Facades\Config;

@@ -6,7 +6,7 @@
  * Time: 下午5:03
  */
 
-namespace Exceptions;
+namespace Rongself\Luosimao\Exceptions;
 
 
 class SmsNotificationException extends \Exception

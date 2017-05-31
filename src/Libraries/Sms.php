@@ -1,5 +1,5 @@
 <?php
-namespace Libraries;
+namespace Rongself\Luosimao\Libraries;
 /**
  * User: Administrator
  * Date: 2016/5/8 0008

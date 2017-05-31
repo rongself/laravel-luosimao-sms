@@ -6,7 +6,7 @@
  * Time: 上午11:20
  */
 
-namespace Providers;
+namespace Rongself\Luosimao\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
