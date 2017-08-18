@@ -8,10 +8,9 @@
 
 namespace Rongself\Luosimao\Channels;
 
-use Exceptions\SmsNotificationException;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Notification;
-use Libraries\Sms;
+use Rongself\Luosimao\Exceptions\SmsNotificationException;
+use Rongself\Luosimao\Libraries\Sms;
+use Illuminate\Notifications\Notification;
 
 class SmsChannel
 {
@@ -31,20 +30,18 @@ class SmsChannel
 
         $message = $notification->toSmsMessage($notifiable);
 
-        $config = Config::get('sms');
+        $config = config('luosimao-sms');
+        $sms = new Sms($config);
+        $res = $sms->send($phone, $message);
+        if ($res) {
+            if (isset($res['error']) && $res['error'] == 0) {
 
-        $sms = new Sms( $config );
-        $res = $sms->send( $phone, $message);
-        if( $res ){
-            if( isset( $res['error'] ) &&  $res['error'] == 0 ){
-
-            }else{
-                throw new SmsNotificationException('failed,code:'.$res['error'].',msg:'.$res['msg']);
+            } else {
+                throw new SmsNotificationException('failed,code:' . $res['error'] . ',msg:' . $res['msg']);
             }
-        }else{
-            throw new SmsNotificationException($sms->last_error());
+        } else {
+            throw new SmsNotificationException(var_export($sms->last_error()));
         }
 
-        //if($result['errcode'] !== 0) throw new WechatNotificationException('消息发送失败');
     }
 }
